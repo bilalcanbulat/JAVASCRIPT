@@ -120,13 +120,13 @@ yuroKur.onchange = function () {
 // ! tlFiyatlar = [120, 340, 550, 245, 322.5, 789];
 const zamliTlFiyatlar = tlFiyatlar.map((deger, indis) => {
   if (deger < 250) {
-    return `${indis + 1}.ürünün zamli fiyati : ${deger * 1.1}`;
+    return `${indis + 1}.ürünün zamli fiyati : ${deger * 1.1} `;
   } else {
-    return `${indis + 1}.ürünün zamli fiyati : ${deger * 1.2}
+    return `${indis + 1}.ürünün zamli fiyati : ${deger * 1.2} 
     `;
   }
 });
-document.querySelector(".zamli-fiyat").innerHTML = zamliTlFiyatlar;
+document.querySelector(".zamli-fiyat").innerHTML = zamliTlFiyatlar.join("<br>");
 console.log(zamliTlFiyatlar);
 // tlFiyatlar listesinde fiyatı 250 TL den az olanlari ayri bir diziye saklayalim.
 const kucuk250 = tlFiyatlar.filter((d) => d < 250);
@@ -137,3 +137,15 @@ tlFiyatlar.filter((d) => d < 350).forEach((x) => console.log(x));
 console.log(tlFiyatlar.sort((a, b) => a - b));
 // Büyükten küçüğe  sıralama
 console.log(tlFiyatlar.sort((a, b) => b - a));
+
+
+const maaslar =[3000,5000,4000,6000,6500];
+
+const zamliMaaslar = maaslar.filter((d)=> d<=4000).map((d)=>d*1.5).forEach((d)=> console.log(d));
+maaslar.map((d)=>d<=4000?d*1.5:d*1.25).forEach((d)=> console.log(d));
+console.log(zamliMaaslar);
+
+const adlar =["Samet","Hakkı","Duygu","Emrullah","Bilal","Ali","Ahmet","Hasan","Defne","Serdar"];
+const harfBul=function(){
+  adlar.filter((d)=>d.charAt(0))
+}
