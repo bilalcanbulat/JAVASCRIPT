@@ -143,9 +143,20 @@ const maaslar =[3000,5000,4000,6000,6500];
 
 const zamliMaaslar = maaslar.filter((d)=> d<=4000).map((d)=>d*1.5).forEach((d)=> console.log(d));
 maaslar.map((d)=>d<=4000?d*1.5:d*1.25).forEach((d)=> console.log(d));
-console.log(zamliMaaslar);
+// console.log(zamliMaaslar);
 
 const adlar =["Samet","Hakkı","Duygu","Emrullah","Bilal","Ali","Ahmet","Hasan","Defne","Serdar"];
-const harfBul=function(){
+const isimBul=function(harf){
+  const buyukHarf=harf.toUpperCase();
+  adlar.filter((x)=>x.startsWith(buyukHarf)).forEach((x)=>console.log(x));
   adlar.filter((d)=>d.charAt(0))
 }
+
+isimBul("a");
+isimBul("A");
+isimBul("S");
+isimBul("s");
+
+const ortalamMaas=maaslar.reduce(())
+
+
